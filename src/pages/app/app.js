@@ -1,11 +1,11 @@
 import React from 'react';
-import { Button } from 'antd';
 import './app.css';
+import MyMap from "../../components/map";
 
 const App = () => (
-  <div className="App">
-    <Button type="primary">Button</Button>
-  </div>
+   <div id="map-container">
+       <MyMap/>
+   </div>
 );
 
 export default App;
