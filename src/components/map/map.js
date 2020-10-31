@@ -34,8 +34,9 @@ export default class MapView extends React.Component {
     }
 
     render() {
-        const onPolygonClick = (id) => {
-            console.log(id);
+        const onPolygonClick = (properties) => {
+            // console.log(properties);
+            this.props.setChosenCard(properties);
         }
 
         const {error, isLoaded, geoJSON} = this.state;
@@ -53,7 +54,7 @@ export default class MapView extends React.Component {
                     <GeoJSON data={geoJSON} color={"#35ab03"} weight={2} fillOpacity={0.5}
                              onEachFeature={(feature, layer) => {
                                  layer.on('click', () => {
-                                     onPolygonClick(feature.properties.id)
+                                     onPolygonClick(feature.properties)
                                  });
                              }}/>
                 </Map>
