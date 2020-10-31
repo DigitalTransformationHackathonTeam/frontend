@@ -11,6 +11,7 @@ export default class App extends React.Component{
         super(props);
         this.state = {
             chosenProperties: null,
+            map_api_url: 'http://0.0.0.0:8091/api/location_optimizer/find_best_district',
         };
     }
 
@@ -33,7 +34,7 @@ export default class App extends React.Component{
                     <Settings/>
                 </div>
                 <div className="map-container">
-                    <MapView setChosenCard={(properties) => console.log("Card set")} />
+                    <MapView setChosenCard={(properties) => console.log("Card set")} api_url={this.state.map_api_url}/>
                 </div>
             </div>
         )

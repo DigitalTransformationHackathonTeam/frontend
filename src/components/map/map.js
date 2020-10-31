@@ -11,6 +11,7 @@ export default class MapView extends React.Component {
             isLoaded: false,
             geoJSON: {},
             setChosenCard: props.setChosenCard,
+            api_url: props.api_url,
         };
     }
 
@@ -34,7 +35,7 @@ export default class MapView extends React.Component {
     }
 
     componentDidMount() {
-        this.updateGeoJson('http://0.0.0.0:8091/api/location_optimizer/find_best_district')
+        this.updateGeoJson(this.state.api_url);
     }
 
     onPolygonClick = (properties) => {
