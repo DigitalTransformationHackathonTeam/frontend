@@ -20,9 +20,9 @@ export default class Info extends React.Component {
                     <p>
                         <b>Скоринг:</b> {Math.floor(properties.score)}/100
                     </p>
-                    <b>Почему перспективно:</b>
+                    <span className="text-info-style">Почему перспективно:</span>
                     <div>
-                        <Tag color="volcano">{properties.explanation}</Tag>
+                        <Tag color="blue">{properties.explanation}</Tag>
                     </div>
                 </Card>
             )
