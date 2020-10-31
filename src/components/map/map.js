@@ -33,6 +33,10 @@ export default class MapView extends React.Component {
     }
 
     render() {
+        const onPolygonClick = (id) => {
+            console.log("polygon pressed --- " + id);
+        }
+
         const {error, isLoaded, polygon} = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
@@ -45,7 +49,9 @@ export default class MapView extends React.Component {
                         attribution='&copy; <a href="copyright">Openstreetmap</a>'
                         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                     />
-                    <GeoJSON data={polygon} color={"#35ab03"} weight={2} fillOpacity={0.5}/>
+                    <GeoJSON data={polygon} color={"#35ab03"} weight={2} fillOpacity={0.5} onClick={() => {
+                        onPolygonClick(polygon);
+                    }}/>
                 </Map>
             );
         }

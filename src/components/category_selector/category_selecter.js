@@ -3,15 +3,15 @@ import {Cascader} from "antd";
 
 const options = [
     {
-        value: 'товары',
+        value: 'goods',
         label: 'Товары',
         children: [
             {
-                value: 'продукты',
+                value: 'food',
                 label: 'Продукты'
             },
             {
-                value: 'лекарства',
+                value: 'medicine',
                 label: 'Лекарства',
             }
         ]
