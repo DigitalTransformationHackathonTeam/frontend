@@ -38,3 +38,10 @@
   height: 100%;
   width: 100%;
 }
+
+.settings_area {
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  z-index: 2;
+}

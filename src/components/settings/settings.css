@@ -1,0 +1,22 @@
+.settings{
+    display: block;
+    background-color: white;
+    width: 24rem;
+    height: 33rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 3rem;
+}
+
+.section_chooser{
+    display: block;
+}
+.form_section {
+    margin-bottom: 2rem;
+}
+
+.scrollable_form {
+    height: 18rem;
+    overflow: scroll;
+    margin-bottom: 1rem;
+}

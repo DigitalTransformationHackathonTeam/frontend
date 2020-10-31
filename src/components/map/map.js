@@ -15,7 +15,7 @@ export default class MapView extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://192.168.0.115:8000/api/location_optimizer/find_best_district/Moscow/pharmacy')
+        fetch('http://0.0.0.0:8091/api/location_optimizer/find_best_district')
             .then(res => res.json())
             .then(
                 (result) => {
