@@ -16,6 +16,7 @@ export default class App extends React.Component{
         this.state = {
             chosenProperties: null,
             map_api_url: Constants.api_url + '/api/location_optimizer/find_best_district/Moscow/pharmacy',
+            cur_key: 1,
         };
     }
 
@@ -34,6 +35,7 @@ export default class App extends React.Component{
         });
         this.setState({
             map_api_url: new_url,
+            cur_key: this.state.cur_key + 1,
         });
         console.log(new_url);
 
@@ -52,7 +54,7 @@ export default class App extends React.Component{
                     <Settings processChanges={(settings) => this.processSettingsChange(settings)}/>
                 </div>
                 <div className="map-container">
-                    <MapView setChosenCard={(properties) => console.log("Card set")} api_url={this.state.map_api_url}/>
+                    <MapView setChosenCard={(properties) => console.log("Card set")} api_url={this.state.map_api_url} key={this.state.cur_key}/>
                 </div>
             </div>
         )

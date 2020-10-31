@@ -13,7 +13,7 @@ export const settingTags = {
     traffic: 'rich_traffic',
     house: 'new_houses',
     school: 'new_school',
-}
+};
 
 export const api_url = 'http://192.168.0.115:8000';
 
