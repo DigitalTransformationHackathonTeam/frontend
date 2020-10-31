@@ -4,7 +4,6 @@ import "./info.css"
 
 
 export default class Info extends React.Component {
-
     render() {
         const {properties} = this.props;
         if (properties === null) {

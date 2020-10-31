@@ -11,7 +11,6 @@ export default class App extends React.Component {
 
     constructor(props) {
         super(props);
-
         this.state = {
             chosenProperties: null,
             map_api_url: Constants.api_url + '/api/location_optimizer/find_best_district/Moscow/pharmacy',
@@ -37,7 +36,6 @@ export default class App extends React.Component {
             cur_key: this.state.cur_key + 1,
         });
         console.log(new_url);
-
     }
 
     render() {

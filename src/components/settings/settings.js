@@ -1,11 +1,10 @@
 import React from "react";
 import "./settings.css"
-import {Button, Radio, Checkbox} from "antd";
-import {Typography, Tabs} from "antd";
+import {Button, Checkbox, Radio, Tabs, Typography} from "antd";
 import * as Constants from "../../constants";
-const { Title } = Typography;
-const { TabPane } = Tabs;
 
+const {Title} = Typography;
+const {TabPane} = Tabs;
 
 export default class Settings extends React.Component {
     constructor(props) {
@@ -32,8 +31,7 @@ export default class Settings extends React.Component {
                     active: true,
                 })}>Настройки</Button>
             );
-        }
-        else {
+        } else {
             return (
                 <div className={"settings"}>
                     <Title level={2}>Настройка</Title>
@@ -63,11 +61,13 @@ export default class Settings extends React.Component {
                                     </div>
                                     <div className={"form_section"}>
                                         <Title level={4}>Доход</Title>
-                                        <Radio.Group buttonStyle="solid" value={this.state.moneySet} onChange={(e) => this.setState({
-                                            moneySet: e.target.value,
-                                        })}>
+                                        <Radio.Group buttonStyle="solid" value={this.state.moneySet}
+                                                     onChange={(e) => this.setState({
+                                                         moneySet: e.target.value,
+                                                     })}>
                                             <Radio.Button value={Constants.settingTags.poor}>Небольшой</Radio.Button>
-                                            <Radio.Button value={Constants.settingTags.middle_money}>Средний</Radio.Button>
+                                            <Radio.Button
+                                                value={Constants.settingTags.middle_money}>Средний</Radio.Button>
                                             <Radio.Button value={Constants.settingTags.rich}>Высокий</Radio.Button>
                                         </Radio.Group>
                                     </div>
@@ -90,7 +90,7 @@ export default class Settings extends React.Component {
                                             trafficSet: e.target.value,
                                         })}>
                                             <Radio value={Constants.settingTags.traffic}>Побольше</Radio>
-                                            <Radio value={null} >Неважно</Radio>
+                                            <Radio value={null}>Неважно</Radio>
                                         </Radio.Group>
                                     </div>
                                     <div className={"form_section"}>
@@ -98,9 +98,10 @@ export default class Settings extends React.Component {
                                         <Checkbox checked={this.state.houseSet != null} onChange={(e) => this.setState({
                                             houseSet: e.target.checked ? Constants.settingTags.house : null,
                                         })}>Новые ЖК</Checkbox>
-                                        <Checkbox checked={this.state.schoolSet != null} onChange={(e) => this.setState({
-                                            schoolSet: e.target.checked ? Constants.settingTags.school : null,
-                                        })}>Новая школа</Checkbox>
+                                        <Checkbox checked={this.state.schoolSet != null}
+                                                  onChange={(e) => this.setState({
+                                                      schoolSet: e.target.checked ? Constants.settingTags.school : null,
+                                                  })}>Новая школа</Checkbox>
                                     </div>
                                 </div>
                             </TabPane>
