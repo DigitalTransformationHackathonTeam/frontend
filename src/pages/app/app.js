@@ -13,7 +13,7 @@ const App = () => (
         <div className="info-polygon">
             <Info/>
         </div>
-        <div className="settings-area">
+        <div className="settings_area">
             <Settings/>
         </div>
         <div className="map-container">
