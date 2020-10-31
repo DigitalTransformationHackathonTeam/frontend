@@ -7,12 +7,6 @@ const { Title } = Typography;
 const { TabPane } = Tabs;
 
 
-//const plainOptions = ['Новые ЖК', 'Новая школа'];
-// const options = [
-//     { label: 'Новые ЖК', value: 'new_houses' },
-//     { label: 'Новая школа', value: 'new_school' },
-// ];
-
 export default class Settings extends React.Component {
     constructor(props) {
         super(props);
