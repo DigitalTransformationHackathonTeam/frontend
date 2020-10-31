@@ -44,17 +44,23 @@
 
 
 import React from 'react';
-import {Map, TileLayer} from 'react-leaflet';
+import {Map, Polygon, TileLayer} from 'react-leaflet';
 
 import './map.css';
 
 export default class MapView extends React.Component {
+
     render() {
+        const points = [[55.74, 37.61], [55.76, 37.61], [55.76, 37.63], [55.74, 37.63]]
         return (
             <Map center={[55.75229, 37.61593]} zoom={13} className='map-wrapper'>
                 <TileLayer
                     attribution='&copy; <a href="copyright">Openstreetmap</a>'
                     url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                />
+                <Polygon
+                    positions={points}
+                    color={'#e90c0c'}
                 />
             </Map>
         );
