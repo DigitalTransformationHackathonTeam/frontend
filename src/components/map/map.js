@@ -10,7 +10,7 @@ export default class MapView extends React.Component {
             error: null,
             isLoaded: false,
             geoJSON: {},
-            setChosenCard: props.setChosenCard,
+            setChosenCard: props.setchosencard,
             api_url: props.api_url,
         };
     }
@@ -40,7 +40,6 @@ export default class MapView extends React.Component {
     }
 
     onPolygonClick = (properties) => {
-        //console.log(properties);
         this.state.setChosenCard(properties);
     }
 

@@ -5,8 +5,6 @@ import App from './pages/app';
 import 'leaflet/dist/leaflet.css';
 
 ReactDOM.render(
-    <React.StrictMode>
-        <App/>
-    </React.StrictMode>,
+    <App/>,
     document.getElementById('root')
 );

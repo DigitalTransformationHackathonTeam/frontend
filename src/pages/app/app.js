@@ -8,7 +8,7 @@ import * as Constants from "../../constants";
 
 
 
-export default class App extends React.Component{
+export default class App extends React.Component {
 
     constructor(props) {
         super(props);
@@ -47,14 +47,15 @@ export default class App extends React.Component{
                 <div className="cat_select">
                     <CategorySelector/>
                 </div>
-                <div className="info-polygon" chosenProperies={this.state.chosenProperties} >
-                    <Info/>
+                <div className="info-polygon">
+                    <Info properties={this.state.chosenProperties}/>
                 </div>
                 <div className="settings_area">
                     <Settings processChanges={(settings) => this.processSettingsChange(settings)}/>
                 </div>
                 <div className="map-container">
-                    <MapView setChosenCard={(properties) => console.log("Card set")} api_url={this.state.map_api_url} key={this.state.cur_key}/>
+                    <MapView setchosencard={(properties) => this.setProperties(properties)}
+                             api_url={this.state.map_api_url}/>
                 </div>
             </div>
         )
