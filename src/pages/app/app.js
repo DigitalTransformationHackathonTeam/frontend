@@ -5,14 +5,19 @@ import CategorySelector from "../../components/category_selector";
 import Settings from "../../components/settings";
 import Info from "../../components/info";
 
-export default class App {
+export default class App extends React.Component{
 
-    state = {
-        chosenProperties: {},
+    constructor(props) {
+        super(props);
+        this.state = {
+            chosenProperties: null,
+        };
     }
 
     setProperties(new_properties) {
-        this.state.chosenProperties = new_properties;
+        this.setState({
+            chosenProperties: new_properties,
+        })
     }
 
     render() {
