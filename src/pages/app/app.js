@@ -5,21 +5,32 @@ import CategorySelector from "../../components/category_selector";
 import Settings from "../../components/settings";
 import Info from "../../components/info";
 
-const App = () => (
-    <div className="outer_wrap">
-        <div className="cat_select">
-            <CategorySelector/>
-        </div>
-        <div className="info-polygon">
-            <Info/>
-        </div>
-        <div className="settings_area">
-            <Settings/>
-        </div>
-        <div className="map-container">
-            <MapView/>
-        </div>
-    </div>
-);
+export default class App {
 
-export default App;
+    state = {
+        chosenProperties: {},
+    }
+
+    setProperties(new_properties) {
+        this.state.chosenProperties = new_properties;
+    }
+
+    render() {
+        return (
+            <div className="outer_wrap">
+                <div className="cat_select">
+                    <CategorySelector/>
+                </div>
+                <div className="info-polygon" chosenProperies={this.state.chosenProperties}>
+                    <Info/>
+                </div>
+                <div className="settings_area">
+                    <Settings/>
+                </div>
+                <div className="map-container">
+                    <MapView/>
+                </div>
+            </div>
+        )
+    }
+}
