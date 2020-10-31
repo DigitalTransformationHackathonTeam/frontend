@@ -48,7 +48,8 @@ import {Map, TileLayer} from 'react-leaflet';
 
 import './map.css';
 
-const MapView = () => {
+export default class MapView extends React.Component {
+    render() {
         return (
             <Map center={[55.75229, 37.61593]} zoom={13} className='map-wrapper'>
                 <TileLayer
@@ -57,6 +58,5 @@ const MapView = () => {
                 />
             </Map>
         );
+    }
 }
-
-export default MapView;
