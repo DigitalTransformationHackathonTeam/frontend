@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Empty} from "antd";
+import {Card, Empty, Tag} from "antd";
 import "./info.css"
 
 
@@ -20,10 +20,10 @@ export default class Info extends React.Component {
                     <p>
                         <b>Скоринг:</b> {Math.floor(properties.score)}/100
                     </p>
-                    <h3>Почему перспективно</h3>
-                    <p>Строится новый ЖК. Рядом появится школа и детский сад. Население - приемущественно женщины с
-                        выским доходом.
-                    </p>
+                    <b>Почему перспективно:</b>
+                    <div>
+                        <Tag color="volcano">{properties.explanation}</Tag>
+                    </div>
                 </Card>
             )
         }
