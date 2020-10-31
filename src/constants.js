@@ -16,4 +16,3 @@ export const settingTags = {
 };
 
 export const api_url = 'http://192.168.0.115:8000';
-

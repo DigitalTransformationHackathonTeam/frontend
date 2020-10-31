@@ -45,20 +45,6 @@ export default class MapView extends React.Component {
 
     render() {
         const {error, isLoaded, geoJSON} = this.state;
-        // let error, isLoaded, geoJSON;
-        // isLoaded = false;
-        // await fetch(this.props.api_url)
-        //     .then(res => res.json())
-        //     .then(
-        //         (result) => {
-        //             isLoaded = true;
-        //             geoJSON = result;
-        //         },
-        //         (err) => {
-        //             error = err;
-        //             isLoaded = true;
-        //         }
-        //     );
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {

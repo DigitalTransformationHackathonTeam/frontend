@@ -7,7 +7,6 @@ import Info from "../../components/info";
 import * as Constants from "../../constants";
 
 
-
 export default class App extends React.Component {
 
     constructor(props) {
@@ -29,7 +28,7 @@ export default class App extends React.Component {
     processSettingsChange(settings) {
         let new_url = Constants.api_url + '/api/location_optimizer/find_best_for_tag/Moscow?';
         Object.entries(settings).forEach((a) => {
-            if (a[1] != null){
+            if (a[1] != null) {
                 new_url += '&tag=' + a[1].toString();
             }
         });
@@ -55,7 +54,7 @@ export default class App extends React.Component {
                 </div>
                 <div className="map-container">
                     <MapView setchosencard={(properties) => this.setProperties(properties)}
-                             api_url={this.state.map_api_url}/>
+                             api_url={this.state.map_api_url} key={this.state.cur_key}/>
                 </div>
             </div>
         )
