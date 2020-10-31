@@ -4,9 +4,11 @@ import MapView from "../../components/map";
 import CategorySelector from "../../components/category_selector";
 
 const App = () => (
-    <div>
-        <CategorySelector/>
-        <div id="map-container">
+    <div className="outer_wrap">
+        <div className="cat_select">
+            <CategorySelector/>
+        </div>
+        <div className="map-container">
             <MapView/>
         </div>
     </div>

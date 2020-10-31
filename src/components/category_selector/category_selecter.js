@@ -1,5 +1,6 @@
 import React from "react";
 import {Cascader} from "antd";
+import "./category_selector.css"
 
 const options = [
     {
@@ -38,7 +39,7 @@ function onChange(value) {
 
 const CategorySelector = () => {
     return (
-        <Cascader options={options} onChange={onChange} placeholder="Please select"/>
+        <Cascader className="category-selector" options={options} size="large" onChange={onChange} placeholder="Что ищем?"/>
     );
 }
 
