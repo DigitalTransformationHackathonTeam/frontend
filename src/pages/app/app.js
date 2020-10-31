@@ -1,10 +1,10 @@
 import React from 'react';
 import './app.css';
-import MyMap from "../../components/map";
+import MapView from "../../components/map";
 
 const App = () => (
    <div id="map-container">
-       <MyMap/>
+       <MapView/>
    </div>
 );
 
