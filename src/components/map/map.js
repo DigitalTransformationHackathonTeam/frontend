@@ -1,7 +1,6 @@
 import React from 'react';
 import {GeoJSON, Map, TileLayer} from 'react-leaflet';
 import './map.css';
-import {geoJSON} from "leaflet/dist/leaflet-src.esm";
 
 export default class MapView extends React.Component {
 
@@ -15,7 +14,7 @@ export default class MapView extends React.Component {
     }
 
     componentDidMount() {
-        fetch('http://192.168.0.115:8000/api/location_optimizer/find_best_district/Moscow/pharmacy')
+        fetch('http://0.0.0.0:8091/api/location_optimizer/find_best_district')
             .then(res => res.json())
             .then(
                 (result) => {
@@ -51,9 +50,12 @@ export default class MapView extends React.Component {
                         attribution='&copy; <a href="copyright">Openstreetmap</a>'
                         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                     />
-                    <GeoJSON data={geoJSON} color={"#35ab03"} weight={2} fillOpacity={0.5} onEachFeature={(feature, layer) => {
-                        layer.on('click', () => {onPolygonClick(feature.properties.id)});
-                    }}/>
+                    <GeoJSON data={geoJSON} color={"#35ab03"} weight={2} fillOpacity={0.5}
+                             onEachFeature={(feature, layer) => {
+                                 layer.on('click', () => {
+                                     onPolygonClick(feature.properties.id)
+                                 });
+                             }}/>
                 </Map>
             );
         }
