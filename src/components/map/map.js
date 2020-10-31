@@ -44,8 +44,6 @@ export default class MapView extends React.Component {
     }
 
     render() {
-
-
         const {error, isLoaded, geoJSON} = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
