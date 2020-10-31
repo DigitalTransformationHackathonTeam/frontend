@@ -16,9 +16,9 @@ export default class Info extends React.Component {
         } else {
             return (
                 <Card className="info-card">
-                    <h1>Точка №Х</h1>
+                    <h1>Точка №{properties.id}</h1>
                     <p>
-                        <b>Скоринг:</b> 6/10
+                        <b>Скоринг:</b> {properties.score}
                     </p>
                     <h3>Почему перспективно</h3>
                     <p>Строится новый ЖК. Рядом появится школа и детский сад. Население - приемущественно женщины с
