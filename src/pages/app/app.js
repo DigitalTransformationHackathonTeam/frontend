@@ -26,14 +26,14 @@ export default class App extends React.Component{
                 <div className="cat_select">
                     <CategorySelector/>
                 </div>
-                <div className="info-polygon" chosenProperies={this.state.chosenProperties}>
+                <div className="info-polygon" chosenProperies={this.state.chosenProperties} >
                     <Info/>
                 </div>
                 <div className="settings_area">
                     <Settings/>
                 </div>
                 <div className="map-container">
-                    <MapView/>
+                    <MapView setChosenCard={(properties) => console.log("Card set")} />
                 </div>
             </div>
         )

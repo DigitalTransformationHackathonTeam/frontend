@@ -9,12 +9,13 @@ export default class MapView extends React.Component {
         this.state = {
             error: null,
             isLoaded: false,
-            geoJSON: {}
+            geoJSON: {},
+            setChosenCard: props.setChosenCard,
         };
     }
 
-    componentDidMount() {
-        fetch('http://0.0.0.0:8091/api/location_optimizer/find_best_district')
+    updateGeoJson(url) {
+        fetch(url)
             .then(res => res.json())
             .then(
                 (result) => {
@@ -30,14 +31,19 @@ export default class MapView extends React.Component {
                     });
                 }
             )
+    }
 
+    componentDidMount() {
+        this.updateGeoJson('http://0.0.0.0:8091/api/location_optimizer/find_best_district')
+    }
+
+    onPolygonClick = (properties) => {
+        //console.log(properties);
+        this.state.setChosenCard(properties);
     }
 
     render() {
-        const onPolygonClick = (properties) => {
-            // console.log(properties);
-            this.props.setChosenCard(properties);
-        }
+
 
         const {error, isLoaded, geoJSON} = this.state;
         if (error) {
@@ -54,7 +60,7 @@ export default class MapView extends React.Component {
                     <GeoJSON data={geoJSON} color={"#35ab03"} weight={2} fillOpacity={0.5}
                              onEachFeature={(feature, layer) => {
                                  layer.on('click', () => {
-                                     onPolygonClick(feature.properties)
+                                     this.onPolygonClick(feature.properties)
                                  });
                              }}/>
                 </Map>
