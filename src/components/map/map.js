@@ -9,7 +9,7 @@ export default class MapView extends React.Component {
         this.state = {
             error: null,
             isLoaded: false,
-            polygon: {}
+            geoJSON: {}
         };
     }
 
@@ -20,7 +20,7 @@ export default class MapView extends React.Component {
                 (result) => {
                     this.setState({
                         isLoaded: true,
-                        polygon: result
+                        geoJSON: result
                     });
                 },
                 (error) => {
@@ -30,28 +30,32 @@ export default class MapView extends React.Component {
                     });
                 }
             )
+
     }
 
     render() {
         const onPolygonClick = (id) => {
-            console.log("polygon pressed --- " + id);
+            console.log(id);
         }
 
-        const {error, isLoaded, polygon} = this.state;
+        const {error, isLoaded, geoJSON} = this.state;
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
             return <div>Loading...</div>;
         } else {
             return (
-                <Map center={[55.75229, 37.61593]} zoom={13} className='map-wrapper'>
+                <Map center={[55.75229, 37.61593]} zoom={13} className='map-wrapper' zoomControl={false}>
                     <TileLayer
                         attribution='&copy; <a href="copyright">Openstreetmap</a>'
                         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
                     />
-                    <GeoJSON data={polygon} color={"#35ab03"} weight={2} fillOpacity={0.5} onClick={() => {
-                        onPolygonClick(polygon);
-                    }}/>
+                    <GeoJSON data={geoJSON} color={"#35ab03"} weight={2} fillOpacity={0.5}
+                             onEachFeature={(feature, layer) => {
+                                 layer.on('click', () => {
+                                     onPolygonClick(feature.properties.id)
+                                 });
+                             }}/>
                 </Map>
             );
         }
