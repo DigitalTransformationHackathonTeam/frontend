@@ -39,7 +39,11 @@ function onChange(value) {
 
 const CategorySelector = () => {
     return (
-        <Cascader className="category-selector" options={options} size="large" onChange={onChange} placeholder="Что ищем?"/>
+        <Cascader className="category-selector"
+                  options={options} size="large"
+                  onChange={onChange}
+                  placeholder="Что ищем?"
+        defaultValue={['goods', 'medicine']}/>
     );
 }
 

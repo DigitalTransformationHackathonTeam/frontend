@@ -11,7 +11,6 @@ export default class Settings extends React.Component {
         super(props);
         this.state = {
             active: false,
-
             genderSet: null,
             ageSet: null,
             moneySet: null,
@@ -27,7 +26,7 @@ export default class Settings extends React.Component {
     render() {
         if (!this.state.active) {
             return (
-                <Button onClick={() => this.setState({
+                <Button className="button-style" onClick={() => this.setState({
                     active: true,
                 })}>Настройки</Button>
             );
