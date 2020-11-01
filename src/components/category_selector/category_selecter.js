@@ -33,6 +33,7 @@ class CategorySelector extends React.Component {
                       options={this.state.options} size="large"
                       onChange={(value) => this.props.onCategorySelectorChange(value)}
                       placeholder="Что ищем?"
+                      allowClear={false}
             defaultValue={['goods', 'pharmacy']}/>
         );
     }
