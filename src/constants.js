@@ -15,4 +15,4 @@ export const settingTags = {
     school: 'new_school',
 };
 
-export const api_url = 'http://192.168.0.115:8000';
+export const api_url = 'http://192.168.0.108:8000';

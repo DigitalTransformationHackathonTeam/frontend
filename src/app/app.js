@@ -1,10 +1,10 @@
 import React from 'react';
 import './app.css';
-import MapView from "../../components/map";
-import CategorySelector from "../../components/category_selector";
-import Settings from "../../components/settings";
-import Info from "../../components/info";
-import * as Constants from "../../constants";
+import MapView from "../components/map";
+import CategorySelector from "../components/category_selector";
+import Settings from "../components/settings";
+import Info from "../components/info";
+import * as Constants from "../constants";
 
 
 export default class App extends React.Component {
@@ -16,6 +16,14 @@ export default class App extends React.Component {
             map_api_url: Constants.api_url + '/api/location_optimizer/find_best_district/Moscow/pharmacy',
             cur_key: 1,
         };
+    }
+
+    onCategorySelectorChange = (value) => {
+        const new_key = this.state.cur_key + 1;
+        this.setState({
+            map_api_url: `${Constants.api_url}/api/location_optimizer/find_best_district/Moscow/${value[1]}`,
+            cur_key: new_key,
+        });
     }
 
     setProperties(new_properties) {
@@ -42,7 +50,7 @@ export default class App extends React.Component {
         return (
             <div className="outer_wrap">
                 <div className="cat_select">
-                    <CategorySelector/>
+                    <CategorySelector onCategorySelectorChange={this.onCategorySelectorChange} />
                 </div>
                 <div className="info-polygon">
                     <Info properties={this.state.chosenProperties}/>
