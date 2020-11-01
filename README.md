@@ -6,7 +6,7 @@
 
 ## Установка
 
-1. В файле `frontend/constants.js` в переменной `api_url` должен быть записать адресс
+1. В файле `frontend/constants.js` в переменной `api_url` должен быть записан адрес
 1. Из папки `frontend` выполните:
   ```
   npm install
