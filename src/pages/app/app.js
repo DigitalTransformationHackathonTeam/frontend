@@ -18,6 +18,14 @@ export default class App extends React.Component {
         };
     }
 
+    onCategorySelectorChange = (value) => {
+        const new_key = this.state.cur_key + 1;
+        this.setState({
+            map_api_url: `${Constants.api_url}/api/location_optimizer/find_best_district/Moscow/${value[1]}`,
+            cur_key: new_key,
+        });
+    }
+
     setProperties(new_properties) {
         this.setState({
             chosenProperties: new_properties,
@@ -42,7 +50,7 @@ export default class App extends React.Component {
         return (
             <div className="outer_wrap">
                 <div className="cat_select">
-                    <CategorySelector/>
+                    <CategorySelector onCategorySelectorChange={this.onCategorySelectorChange} />
                 </div>
                 <div className="info-polygon">
                     <Info properties={this.state.chosenProperties}/>
